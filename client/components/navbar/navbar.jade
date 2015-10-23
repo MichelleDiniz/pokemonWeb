@@ -1,0 +1,6 @@
+.navbar.navbar-default.navbar-static-top(ng-controller='NavbarController')
+  .container
+    #navbar-main.navbar-collapse.collapse(collapse='isCollapsed')
+      ul.nav.navbar-nav
+        li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
+          a(ng-href='{{item.link}}') {{item.title}}

@@ -1,0 +1,54 @@
+div(ng-include="'components/navbar/navbar.html'")
+
+header#banner
+  .container
+    h1 {{pokemon.name}}
+
+section.container
+  .pokemon-content
+    .pokemon-content__image
+      img(ng-src='{{image}}', alt='{{pokemon.name}}')
+
+    .pokemon-content__info
+      h2 {{description}}
+      ul.pokemon__data
+        li
+          span Weight:
+          {{pokemon.weight}}
+        li
+          span Egg:
+          {{pokemon.egg_groups[0].name}}
+        li
+          span Evolutions:
+          a(href='pokemon/{{evolutionId}}', title='{{pokemon.evolutions[0].to}}')
+            |  {{pokemon.evolutions[0].to}}
+        li
+          span Attack:
+          {{pokemon.attack}}
+        li
+          span Defense:
+          {{pokemon.defense}}
+
+section.container.box-comments
+  div(ng-controller='CommentsController')
+    h2 Post your comment
+    form.comments-form(data-ng-submit='addComment(comment)')
+        input(class= 'input', type='text', name='username', data-ng-model='comment.username', placeholder='Name', required)
+        input(class= 'input', type='email', name='email', data-ng-model='comment.email', placeholder='Email', required)
+        textarea(class= 'input', data-ng-model='comment.txt', placeholder='Your Comment')
+        button.btn-primary(type='submit')
+          | Post Comment
+
+    h2 Comments
+    ul.comments-list
+      li.comments-list__item(ng-repeat='comment in comments')
+        div.user-avatar
+          img(data-ng-src='http://www.gravatar.com/avatar/{{comment.avatar}}')
+        div.user-comment
+          span
+            strong {{comment.username}} says:
+            small
+              |  (
+              span(ng-bind="date | date:'MM/dd/yyyy, HH:mm:ss'")
+              | )
+          p.comment-txt {{ comment.txt }}

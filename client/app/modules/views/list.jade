@@ -1,0 +1,11 @@
+header#banner
+  .container
+    h1 Pokemons
+
+.container(ng-controller='ListPokemonsController')
+  ul.pokelist
+    li.pokelist__item(ng-repeat='pokemon in pokemons')
+      a(href='pokemon/{{pokemon.id}}')
+        h2 {{pokemon.name}}
+        .pokelist__image
+          img(ng-src='{{pokemon.image}}', alt='{{pokemon.name}}')

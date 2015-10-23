@@ -1,0 +1,36 @@
+.pokemon-content {
+
+}
+
+.pokemon-content__image {
+  background: $gray;
+
+  img {
+    width: 100%;
+  }
+}
+
+.pokemon-content__info {
+  font-weight: bold;
+
+  p {
+    margin: 5px 0;
+  }
+  span {
+    font-weight: normal;
+  }
+}
+
+@media (min-width: 500px) {
+  .pokemon-content__info,
+  .pokemon-content__image {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .pokemon-content__image {
+    margin-right: 20px;
+    width: 200px;
+    min-height: 200px;
+  }
+  .pokemon-content__info { width: calc(100% - 225px); }
+}

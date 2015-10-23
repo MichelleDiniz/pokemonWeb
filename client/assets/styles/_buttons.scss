@@ -1,0 +1,21 @@
+.btn {
+  background: $gray-light;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  font-weight: bold;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 15px;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  @extend .btn;
+  background: $yellow-dark;
+  color: lighten($gray-light, 10%);
+
+  &:hover {
+    background: darken($yellow-dark, 10%);
+  }
+}

@@ -1,0 +1,51 @@
+.pokelist {
+
+}
+
+.pokelist__item {
+    background: $gray-dark;
+    box-shadow: 0 2px 2px rgba(0,0,0, .2);
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+
+    h2 {
+      color: $gray-light;
+      font-size: 1em;
+      padding: 10px;
+    }
+}
+
+.pokelist__image {
+    background: $gray;
+    height: 150px;
+    margin-bottom: 1em;
+    margin: 0 auto;
+    width: 100%;
+
+    img { width: 150px; }
+}
+
+@media screen and (min-width: 420px) {
+    .pokelist__item {
+        display: inline-block;
+        margin: .8em;
+        vertical-align: top;
+        width: calc(50% - 1.6em);
+    }
+}
+@media screen and (min-width: 768px) {
+    .pokelist__item {
+        width: calc(33.333% - 1.6em);
+
+        h2 { font-size: 1.2em; }
+    }
+}
+
+@media screen and (min-width: 968px) {
+    .pokelist__item { width: calc(25% - 2em); }
+}
+
+@media screen and (min-width: 1280px) {
+    .pokelist__item { width: calc(20% - 2em); }
+}

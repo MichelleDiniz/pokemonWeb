@@ -1,0 +1,57 @@
+// Helpers ans mixins
+
+// Theme Colors
+$white:        #fff;
+$black:        #000;
+
+$gray-dark:    #313131;
+$gray:         #616161;
+$gray-light:   #d0d0d0;
+
+$yellow-dark:  #f1892d;
+$yellow:       #ffcf4b;
+$yellow-light: #fde3a7;
+
+$green-dark:   #16a085;
+$green:        #1abc9c;
+$green-light:  lighten($green, 15%);
+
+$background-color: lighten($yellow-light, 15%); // $yellow-light
+$background-color: $gray-light;
+
+
+// Text and links
+$font-default: "Trebuchet MS", Arial, sans-serif;
+$font-size: 14px;
+$line-height: 1.4em;
+
+$headings-font: "Roboto", Arial, sans-serif;
+
+$font-color: $gray-dark;
+
+$link-color: darken($yellow-dark, 20%);
+$link-color-hover: $yellow-dark;
+
+@mixin box-sizing($value) {
+  -webkit-box-sizing: $value;
+  -moz-box-sizing: $value;
+  -ms-box-sizing: $value;
+  -o-box-sizing: $value;
+  box-sizing: $value;
+}
+
+@mixin box-shadow($value) {
+  -webkit-box-shadow: $value;
+  -moz-box-shadow: $value;
+  -ms-box-shadow: $value;
+  -o-box-shadow: $value;
+  box-shadow: $value;
+}
+
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -moz-transform: $value;
+  -ms-transform: $value;
+  -o-transform: $value;
+  transform: $value;
+}

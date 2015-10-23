@@ -1,0 +1,92 @@
+
+$fa-font-path: "/bower_components/font-awesome/fonts";
+
+@import 'font-awesome/scss/font-awesome';
+@import '_helpers.scss';
+
+/**
+* App-wide Styles
+*/
+
+body {
+  background: $background-color url('/assets/images/container_bg.png') fixed;
+  color: $font-color;
+  font-family: $font-default;
+  font-size: $font-size;
+  line-height: $line-height;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  @include box-sizing(border-box);
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.3em;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#banner {
+  background-image: linear-gradient(to right, $yellow-dark, $yellow);
+}
+
+.container {
+  padding: 1.2em 1em;
+}
+
+.browsehappy {
+  background: $yellow-light;
+  color: $gray-dark;
+  margin: 0.2em 0;
+  padding: 0.2em 0;
+}
+
+.navbar {
+background: $gray-dark;
+a {
+  color: $white;
+}
+}
+@media screen and (min-width: 768px) {
+  .container {
+    margin: 0 auto;
+    max-width: 730px;
+  }
+}
+
+@media screen and (min-width: 968px) {
+  .container {
+    max-width: 1050px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+// Component styles are injected through grunt
+// injector
+// endinjector
+
+@import '_buttons.scss';
+@import '_forms.scss';
+@import '_pokemons_list.scss';
+@import '_pokemon_page.scss';
+@import '_comments.scss';
