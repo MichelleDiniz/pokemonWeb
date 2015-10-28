@@ -1,6 +1,6 @@
 header#banner
   .container
-    h1
+    h1.logo
       a(href='/') {{pokemon.name}}
 
 div(ng-include="'components/navbar/navbar.html'")
@@ -18,7 +18,7 @@ section.container
           span Weight:
            {{pokemon.weight}}
         li
-          span Egg:
+          span Egg groups:
            {{pokemon.egg_groups[0].name}}
         li
           span Evolutions:

@@ -8,8 +8,8 @@ header#banner
 
 div(ng-include="'components/navbar/navbar.html'")
 
-.container.bg-content(ng-controller='ListPokemonsController')
-  ul.pokelist
+.container(ng-controller='ListPokemonsController')
+  ul.pokelist.bg-content
     li.pokelist__item(ng-repeat='pokemon in pokemons | filter:searchPokemons')
       a(href='pokemon/{{pokemon.id}}')
         h2 {{pokemon.name}}
