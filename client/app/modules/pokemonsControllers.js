@@ -1,25 +1,13 @@
 'use strict';
 
-angular.module('pokemonsModule', ['ngMd5'])
+angular.module('pokemonsModule', [
+  'ngMd5',
+  'pokemonsServicesModule'
+  ])
   .controller('ListPokemonsController', ListPokemonsController)
   .controller('GetPokemonController', GetPokemonController)
-  .controller('CommentsController', CommentsController)
-  .service('PokemonService', PokemonService);
+  .controller('CommentsController', CommentsController);
 
-// SERVICES
-function PokemonService($http, $routeParams){
-  var apiURL = 'http://pokeapi.co/api/v1/';
-
-  this.findAll = function(){
-    return $http.get(apiURL + 'pokedex/1/');
-  };
-
-  this.findOne = function(){
-    return $http.get(apiURL + 'pokemon/' + $routeParams.id);
-  };
-}
-
-// CONTROLLERS
 // LIST POKEMONS
 function ListPokemonsController($scope, $http, $q, PokemonService) {
 
@@ -36,7 +24,8 @@ function ListPokemonsController($scope, $http, $q, PokemonService) {
 
           $scope.pokemons = pokemons;
 
-        }).error(function(){
+        })
+        .error(function(){
           defered.reject([]);
         });
     return defered.promise;
