@@ -35,8 +35,16 @@
 
   &.is-empty {
     background: rgba($white, 0.7);
-    color: $yellow-dark;
+    color: $gray;
     font-size: 1.2em;
+    line-height: 1.4em;
+
+    .fa {
+      display: inline-block;
+      float: left;
+      font-size: 2em;
+      margin-right: 15px;
+    }
   }
 }
 
