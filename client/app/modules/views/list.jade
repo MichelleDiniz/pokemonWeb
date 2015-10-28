@@ -1,13 +1,16 @@
 header#banner
   .container
-    h1
+    h1.logo
       a(href='/') Pokemons
+    .search-form
+      input.input(ng-model='searchPokemons', placeholder='Search Pokemons')
+      i.fa.fa-search
 
 div(ng-include="'components/navbar/navbar.html'")
 
 .container.bg-content(ng-controller='ListPokemonsController')
   ul.pokelist
-    li.pokelist__item(ng-repeat='pokemon in pokemons')
+    li.pokelist__item(ng-repeat='pokemon in pokemons | filter:searchPokemons')
       a(href='pokemon/{{pokemon.id}}')
         h2 {{pokemon.name}}
         .pokelist__image

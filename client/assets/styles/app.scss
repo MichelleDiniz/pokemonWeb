@@ -51,28 +51,13 @@ ul {
   padding: 0;
 }
 
-#banner {
-  background-image: linear-gradient(to right, $yellow-dark, $yellow);
-  padding: 1.2em 1em;
-
-  h1 {
-    background: $white url('/assets/images/logo-pokemon-79x45.png') no-repeat center center;
-    color: transparent;
-    font: 0/0 a;
-    height: 65px;
-    width: 100px;
-
-    a {
-      display: block;
-      height: 65px;
-      width: 100px;
-    }
-  }
-}
-
 .wrapper {
   background: url('/assets/images/pokebola-450x450.png') no-repeat 120% 150% fixed;
   padding-bottom: 60px;
+
+  > .container {
+    min-height: 800px;
+  }
 }
 
 .container { padding: 0 1em }
@@ -122,6 +107,7 @@ ul {
 
 @import '_buttons.scss';
 @import '_forms.scss';
+@import '_header.scss';
 @import '_pokemons_list.scss';
 @import '_pokemon_page.scss';
 @import '_comments.scss';

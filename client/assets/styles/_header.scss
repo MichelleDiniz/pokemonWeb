@@ -1,0 +1,39 @@
+/*
+ * All Styles of Header
+ */
+
+#banner {
+  background-image: linear-gradient(to right, $yellow-dark, $yellow);
+  padding: 1.2em 1em;
+}
+
+.logo {
+  background: $white url('/assets/images/logo-pokemon-79x45.png') no-repeat center center;
+  color: transparent;
+  display: inline-block;
+  font: 0/0 a;
+  height: 65px;
+  vertical-align: top;
+  width: 100px;
+
+  a {
+    display: block;
+    height: 65px;
+    width: 100px;
+  }
+}
+
+.search-form {
+  display: inline-block;
+  float: right;
+  font-size: 0.8em;
+  position: relative;
+
+  .fa {
+    position: absolute;
+    right: 15px;
+    top: 13px;
+  }
+
+  input { padding-right: 40px; }
+}
