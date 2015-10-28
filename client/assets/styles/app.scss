@@ -8,8 +8,13 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 * App-wide Styles
 */
 
+%wrapper-bg-image {
+  background: url('/assets/images/container_bg.png') fixed;
+}
+
 body {
-  background: $background-color url('/assets/images/container_bg.png') fixed;
+  @extend %wrapper-bg-image;
+  background-color: $background-color;
   color: $font-color;
   font-family: $font-default;
   font-size: $font-size;
@@ -26,13 +31,18 @@ h1, h2, h3, h4 {
   line-height: 1.3em;
 }
 
+.title { color: $gray-dark; }
+
+.subtitle {
+  color: $gray-dark;
+  text-shadow: 2px 2px 2px rgba($gray-dark, .3);
+}
+
 a {
   color: $link-color;
   text-decoration: none;
 
-  &:hover {
-    color: $link-color-hover;
-  }
+  &:hover { color: $link-color-hover; }
 }
 
 ul {
@@ -43,10 +53,34 @@ ul {
 
 #banner {
   background-image: linear-gradient(to right, $yellow-dark, $yellow);
+  padding: 1.2em 1em;
+
+  h1 {
+    background: $white url('/assets/images/logo-pokemon-79x45.png') no-repeat center center;
+    color: transparent;
+    font: 0/0 a;
+    height: 65px;
+    width: 100px;
+
+    a {
+      display: block;
+      height: 65px;
+      width: 100px;
+    }
+  }
 }
 
-.container {
-  padding: 1.2em 1em;
+.wrapper {
+  background: url('/assets/images/pokebola-450x450.png') no-repeat -150px 170% fixed;
+  padding-bottom: 60px;
+}
+
+.container { padding: 0 1em }
+
+.bg-content {
+  background: $white;
+  border-radius: 0 0 20px 20px;
+  padding: 20px;
 }
 
 .browsehappy {
@@ -57,11 +91,16 @@ ul {
 }
 
 .navbar {
-background: $gray-dark;
-a {
-  color: $white;
+  background: $gray-dark;
+  padding: 1.2em 1em;
+
+  a {
+    color: $white;
+
+    &:hover { color: $yellow; }
+  }
 }
-}
+
 @media screen and (min-width: 768px) {
   .container {
     margin: 0 auto;
@@ -70,15 +109,11 @@ a {
 }
 
 @media screen and (min-width: 968px) {
-  .container {
-    max-width: 1050px;
-  }
+  .container { max-width: 1050px; }
 }
 
 @media screen and (min-width: 1300px) {
-  .container {
-    max-width: 1200px;
-  }
+  .container { max-width: 1200px; }
 }
 
 // Component styles are injected through grunt

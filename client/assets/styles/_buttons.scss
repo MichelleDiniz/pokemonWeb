@@ -15,7 +15,5 @@
   background: $yellow-dark;
   color: lighten($gray-light, 10%);
 
-  &:hover {
-    background: darken($yellow-dark, 10%);
-  }
+  &:hover { background: darken($yellow-dark, 10%); }
 }

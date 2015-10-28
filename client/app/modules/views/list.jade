@@ -1,8 +1,11 @@
 header#banner
   .container
-    h1 Pokemons
+    h1
+      a(href='/') Pokemons
 
-.container(ng-controller='ListPokemonsController')
+div(ng-include="'components/navbar/navbar.html'")
+
+.container.bg-content(ng-controller='ListPokemonsController')
   ul.pokelist
     li.pokelist__item(ng-repeat='pokemon in pokemons')
       a(href='pokemon/{{pokemon.id}}')

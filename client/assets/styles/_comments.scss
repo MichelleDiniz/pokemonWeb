@@ -1,12 +1,12 @@
-.box-comments {
-
-}
-
 %white-box {
   background: rgba($white, .5);
   border-radius: 10px;
   margin-bottom: 20px;
   padding: 20px;
+}
+
+.box-comments {
+  margin-top: 20px;
 }
 
 .comments-form {
@@ -34,9 +34,7 @@
   height: 60px;
   width: 60px;
 
-  img {
-    width: 100%;
-  }
+  img { width: 100%; }
 }
 
 .user-comment {

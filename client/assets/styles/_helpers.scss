@@ -16,9 +16,11 @@ $green-dark:   #16a085;
 $green:        #1abc9c;
 $green-light:  lighten($green, 15%);
 
+$red:          #e00906;
+$blue:         #0063b9;
+
 $background-color: lighten($yellow-light, 15%); // $yellow-light
 $background-color: $gray-light;
-
 
 // Text and links
 $font-default: "Trebuchet MS", Arial, sans-serif;
@@ -29,7 +31,7 @@ $headings-font: "Roboto", Arial, sans-serif;
 
 $font-color: $gray-dark;
 
-$link-color: darken($yellow-dark, 20%);
+$link-color: darken($yellow-dark, 10%);
 $link-color-hover: $yellow-dark;
 
 @mixin box-sizing($value) {
