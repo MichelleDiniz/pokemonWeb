@@ -1,11 +1,5 @@
 'use strict';
 
-angular.module('getPokemonModule', [
-  'pokemonsServicesModule',
-  'commentsModule'
-  ])
-  .controller('GetPokemonController', GetPokemonController);
-
 function GetPokemonController($http, $scope, $routeParams, PokemonService) {
   PokemonService
     .findOne()
@@ -38,3 +32,9 @@ function GetPokemonController($http, $scope, $routeParams, PokemonService) {
 }
 
 GetPokemonController.$inject = ['$http', '$scope', '$routeParams', 'PokemonService'];
+
+angular.module('getPokemonModule', [
+  'pokemonsServicesModule',
+  'commentsModule'
+  ])
+  .controller('GetPokemonController', GetPokemonController);

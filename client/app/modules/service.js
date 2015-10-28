@@ -1,6 +1,4 @@
 'use strict';
-angular.module('pokemonsServicesModule', [])
-  .service('PokemonService', PokemonService);
 
 function PokemonService($http, $routeParams){
   var apiURL = 'http://pokeapi.co/api/v1/';
@@ -15,3 +13,6 @@ function PokemonService($http, $routeParams){
 }
 
 PokemonService.$inject = ['$http', '$routeParams'];
+
+angular.module('pokemonsServicesModule', [])
+  .service('PokemonService', PokemonService);

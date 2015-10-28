@@ -1,10 +1,5 @@
 'use strict';
 
-angular.module('listPokemonsModule', [
-  'pokemonsServicesModule'
-  ])
-  .controller('ListPokemonsController', ListPokemonsController);
-
 function ListPokemonsController($scope, $http, $q, PokemonService) {
 
   function getAllPokemons(pokemons){
@@ -28,8 +23,8 @@ function ListPokemonsController($scope, $http, $q, PokemonService) {
   }
 
   function buildPokemon(pokemon){
-    var pokeUri = pokemon.resource_uri.split('/');
-    var id = pokeUri[pokeUri.length - 2];
+    var pokeUri = pokemon.resource_uri.split('/'),
+        id = pokeUri[pokeUri.length - 2];
 
     pokemon.id = parseInt(id);
     pokemon.image = 'http://pokeapi.co/media/img/' + id + '.png';
@@ -40,3 +35,10 @@ function ListPokemonsController($scope, $http, $q, PokemonService) {
 }
 
 ListPokemonsController.$inject = ['$scope', '$http', '$q', 'PokemonService'];
+
+
+angular.module('listPokemonsModule', [
+  'pokemonsServicesModule'
+  ])
+  .controller('ListPokemonsController', ListPokemonsController);
+

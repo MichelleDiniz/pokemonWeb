@@ -1,10 +1,5 @@
 'use strict';
 
-angular.module('commentsModule', [
-  'ngMd5'
-  ])
-  .controller('CommentsController', CommentsController);
-
 function CommentsController($scope, md5){
   $scope.comments = [];
 
@@ -12,9 +7,9 @@ function CommentsController($scope, md5){
     comment.avatar = md5.createHash(comment.email.trim().toLowerCase() || '');
     $scope.date = new Date();
     $scope.comments.push(angular.copy(comment));
-    $scope.comments.username = '';
-    $scope.comments.email = '';
-    $scope.comments.txt = '';
+    // $scope.comments.username = '';
+    // $scope.comments.email = '';
+    // $scope.comments.txt = '';
   };
 
   $scope.removeComment = function($index) {
@@ -23,3 +18,8 @@ function CommentsController($scope, md5){
 }
 
 CommentsController.$inject = ['$scope', 'md5'];
+
+angular.module('commentsModule', [
+  'ngMd5'
+  ])
+  .controller('CommentsController', CommentsController);
