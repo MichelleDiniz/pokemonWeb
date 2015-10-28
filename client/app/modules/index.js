@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('pokemonsRoutesModule', [
-  'ngRoute'
+  'ngRoute',
+  'pokemonsModule'
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

@@ -7,7 +7,6 @@ angular.module('pokemonWebApp', [
   'ngRoute',
   'btford.socket-io',
   'pokemonsRoutesModule',
-  'pokemonsModule',
   'angularMd5'
 ])
   .config(function ($routeProvider, $locationProvider) {

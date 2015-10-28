@@ -1,12 +1,11 @@
 'use strict';
 
 angular.module('pokemonsModule', [
-  'ngMd5',
-  'pokemonsServicesModule'
+  'pokemonsServicesModule',
+  'commentsModule'
   ])
   .controller('ListPokemonsController', ListPokemonsController)
-  .controller('GetPokemonController', GetPokemonController)
-  .controller('CommentsController', CommentsController);
+  .controller('GetPokemonController', GetPokemonController);
 
 // LIST POKEMONS
 function ListPokemonsController($scope, $http, $q, PokemonService) {
@@ -75,25 +74,5 @@ function GetPokemonController($http, $scope, $routeParams, PokemonService) {
       });
 }
 
-// COMMENTS
-function CommentsController($scope, md5){
-  $scope.comments = [];
-
-  $scope.addComment = function(comment) {
-    // comment.avatar = md5(comment.email.trim().toLowerCase());
-    comment.avatar = md5.createHash(comment.email || '');
-    $scope.date = new Date();
-    $scope.comments.push(angular.copy(comment));
-    $scope.comments.username = '';
-    $scope.comments.email = '';
-    $scope.comments.txt = '';
-  };
-
-  $scope.removeComment = function($index) {
-      $scope.comments.splice($index, 1);
-  };
-}
-
 ListPokemonsController.$inject = ['$scope', '$http', '$q', 'PokemonService'];
 GetPokemonController.$inject = ['$http', '$scope', '$routeParams', 'PokemonService'];
-CommentsController.$inject = ['$scope', 'md5'];
