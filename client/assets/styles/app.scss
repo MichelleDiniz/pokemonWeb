@@ -52,12 +52,7 @@ ul {
 }
 
 .wrapper {
-  background: url('/assets/images/pokebola-450x450.png') no-repeat 120% 150% fixed;
   padding-bottom: 60px;
-
-  > .container {
-    min-height: 800px;
-  }
 }
 
 .container { padding: 0 1em }
@@ -87,6 +82,11 @@ ul {
 }
 
 @media screen and (min-width: 768px) {
+  .wrapper {
+    background: url('/assets/images/pokebola-450x450.png') no-repeat 120% 150% fixed;
+    min-height: 900px;
+  }
+
   .container {
     margin: 0 auto;
     max-width: 730px;
