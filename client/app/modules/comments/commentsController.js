@@ -9,8 +9,7 @@ function CommentsController($scope, md5){
   $scope.comments = [];
 
   $scope.addComment = function(comment) {
-    // comment.avatar = md5(comment.email.trim().toLowerCase());
-    comment.avatar = md5.createHash(comment.email || '');
+    comment.avatar = md5.createHash(comment.email.trim().toLowerCase() || '');
     $scope.date = new Date();
     $scope.comments.push(angular.copy(comment));
     $scope.comments.username = '';
