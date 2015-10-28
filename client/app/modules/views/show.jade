@@ -44,8 +44,10 @@ section.container.box-comments
 
     h2.subtitle Comments
     ul.comments-list
-      li.comments-list__item(ng-if='comments == ""')
-        | Any comments here. Be the first!
+      li.comments-list__item.is-empty(ng-if='comments == ""')
+        | Any comments here.
+        br
+        | Be the first!
       li.comments-list__item(ng-repeat='comment in comments')
         div.user-avatar
           img(data-ng-src='http://www.gravatar.com/avatar/{{comment.avatar}}')
