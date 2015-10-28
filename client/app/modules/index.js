@@ -2,7 +2,8 @@
 
 angular.module('pokemonsRoutesModule', [
   'ngRoute',
-  'pokemonsModule'
+  'listPokemonsModule',
+  'getPokemonModule'
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider

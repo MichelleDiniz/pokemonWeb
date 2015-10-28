@@ -1,48 +1,11 @@
 'use strict';
 
-angular.module('pokemonsModule', [
+angular.module('getPokemonModule', [
   'pokemonsServicesModule',
   'commentsModule'
   ])
-  .controller('ListPokemonsController', ListPokemonsController)
   .controller('GetPokemonController', GetPokemonController);
 
-// LIST POKEMONS
-function ListPokemonsController($scope, $http, $q, PokemonService) {
-
-  function getAllPokemons(pokemons){
-    var defered = $q.defer();
-
-    PokemonService
-      .findAll()
-        .success(function(list){
-
-          pokemons = list.pokemon;
-          pokemons = pokemons.map(buildPokemon);
-          defered.resolve(pokemons);
-
-          $scope.pokemons = pokemons;
-
-        })
-        .error(function(){
-          defered.reject([]);
-        });
-    return defered.promise;
-  }
-
-  function buildPokemon(pokemon){
-    var pokeUri = pokemon.resource_uri.split('/');
-    var id = pokeUri[pokeUri.length - 2];
-
-    pokemon.id = parseInt(id);
-    pokemon.image = 'http://pokeapi.co/media/img/' + id + '.png';
-
-    return pokemon;
-  }
-  getAllPokemons();
-}
-
-// GET POKEMON
 function GetPokemonController($http, $scope, $routeParams, PokemonService) {
   PokemonService
     .findOne()
@@ -74,5 +37,4 @@ function GetPokemonController($http, $scope, $routeParams, PokemonService) {
       });
 }
 
-ListPokemonsController.$inject = ['$scope', '$http', '$q', 'PokemonService'];
 GetPokemonController.$inject = ['$http', '$scope', '$routeParams', 'PokemonService'];
