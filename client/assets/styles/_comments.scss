@@ -27,6 +27,7 @@
 .comments-list__item {
   @extend %white-box;
   border-bottom: 1px solid $gray-light;
+  white-space: pre-line;
 
   &.is-empty {
     background: rgba($white, 0.7);
